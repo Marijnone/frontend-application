@@ -11,7 +11,7 @@ function view (state, emit) {
     <body class="code lh-copy">
       <main class="pa3 cf center">
         <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>1.</h2>
+          <h2>1. werkt </h2>
           <p>
             Welcome to your new Choo application.
             We're very happy you've made it this far.
@@ -151,6 +151,14 @@ function view (state, emit) {
       </main>
     </body>
   `
+
+
+
+
+
+
+
+  
 
   function handleClick () {
     emit('clicks:add', 1)
