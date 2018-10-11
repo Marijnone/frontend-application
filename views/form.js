@@ -25,6 +25,7 @@ module.exports = function (state, emit) {
   </body> 
   
  `
+ //fucntion to select value
  function addAnswer(){
   var selectedOption = document.querySelectorAll('.form')
   var selectedValues = []

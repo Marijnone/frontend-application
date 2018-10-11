@@ -33,7 +33,7 @@ function view (state, emit) {
       </main>
     </body>`
 
-console.log(choo.state);
+
 
   function handleClick () {
     emit('clicks:add', 1)

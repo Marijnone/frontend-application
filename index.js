@@ -21,14 +21,14 @@ app.use(function (state, emitter) {
   // initialize state
   state.answers = []
 
-  // add animal
+  // add answer
   emitter.on('addAnswer', function (answer) {
-    const {type, value} = answer;
-    console.log('answer emitted', answer);
+    var {type, value} = answer; //to define the type and value
+    console.log('answer emitted', answer)
     var obj = {type: type, value: value}
     state.answers.push(obj)
     
-    emitter.emit('render')
+    // emitter.emit('render') // tot nu toe onbekende tender functie. uitzetten verhelpt niet onthouden van value
 
   })
 })
