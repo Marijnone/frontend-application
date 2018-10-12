@@ -1,11 +1,12 @@
 var html = require('choo/html')
-
+var ChooComponent = require('choo/component')
 var name = 'Marijn'
 
 module.exports = function (state, emit) {
   return html `
   <body>
-  <form id="algemeen">
+  <li><a href="./">main</a></li>
+  <form id="algemeen" onsubmit=${addAnswer}>
   <label for="geslacht">geslacht</label>
   <select class="form" onchange=${addAnswer} id="geslacht" name="geslacht">
     <option value="man">man</option>
@@ -19,7 +20,9 @@ module.exports = function (state, emit) {
     <option value="8 tot 12 jaar">8 tot 12 jaar</option>
     <option value="12 tot 16 jaar">12 tot 16 jaar</option>
     <option value="16 tot 18 jaar">16 tot 18 jaar</option>
+   
   </select>
+  <input type="submit" value="submit">
   </form>
 
   </body> 
@@ -27,6 +30,7 @@ module.exports = function (state, emit) {
  `
  //fucntion to select value
  function addAnswer(){
+  e.preventDefault()
   var selectedOption = document.querySelectorAll('.form')
   var selectedValues = []
   selectedOption.forEach(function(select){

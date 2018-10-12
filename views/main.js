@@ -10,7 +10,9 @@ function view (state, emit) {
 
   
   return html`
+
     <body>
+    <li><a href="./form">form</a></li>
       <section class="fl mw6 w-50-m w-third-l pa3">
           <h2>4.</h2>
 
@@ -28,9 +30,12 @@ function view (state, emit) {
             Emit a click event
           </button>
 
-    
+      <p> Antwoorden: ${state.answers}</p>    
+      
 
       </main>
+      
+
     </body>`
 
 
@@ -38,4 +43,5 @@ function view (state, emit) {
   function handleClick () {
     emit('clicks:add', 1)
   }
+  
 }
