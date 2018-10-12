@@ -30,7 +30,9 @@ function view (state, emit) {
             Emit a click event
           </button>
 
-      <p> Antwoorden: ${state.answers}</p>    
+      <p> Antwoorden: ${state.answers.map(function(answer){
+        return answer.type + ' ' + ' ' + answer.value
+      })}</p>    
       
 
       </main>

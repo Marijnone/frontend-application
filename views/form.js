@@ -26,15 +26,15 @@ module.exports = function (state, emit) {
          </select>
          <button class="dim ph3 ba bw1 pv2 b--black pointer bg-white"
             onclick=${addAnswer}>
-            Emit a click event
+            Submit data
           </button>
     </form>
-    <p class="test"> Antwoorden: ${state.answers.forEach(answer => {
-      console.log(state.answers[0])
+    <p class="test">
+     
       
-      return state.answers[0].type
+       <li>${state.answers} </li>
       
-    })}</p>    
+    </p>    
 
  
   </body>`
@@ -49,5 +49,7 @@ module.exports = function (state, emit) {
     selectedValues.push({type: question, value: selectedValue})
     })
   emit('answers:add', selectedValues)
+  console.log(state.answers);
+  
   }
 }
