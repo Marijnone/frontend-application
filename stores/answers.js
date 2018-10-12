@@ -4,11 +4,16 @@ function answers (state, emitter) {
   state.answers = []
 
   emitter.on('DOMContentLoaded', function () {
-    emitter.on('answers:add', function (answers) {
-      state.answers.push(answers)
-      emitter.emit(state.events.RENDER)
+    emitter.on('answers:add', function (answer) {
+        answer.map(answer => {
+            var {type, value} = answer; //to define the type and value
+            var obj = {type: type, value: value}
+            state.answers.push(obj)
+
+            emitter.emit('render')
+        })
+        emitter.emit(state.events.RENDER)
     })
   })
+
 }
-
-

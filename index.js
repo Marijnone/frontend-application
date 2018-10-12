@@ -16,25 +16,9 @@ app.use((state,emitter) => {
       
 })
 
-//Setup state
-app.use(function (state, emitter) {
-  // initialize state
-  state.answers = []
-
-  // add answer
-  emitter.on('addAnswer', function (answer) {
-    var {type, value} = answer; //to define the type and value
-    console.log('answer emitted', answer)
-    var obj = {type: type, value: value}
-    state.answers.push(obj)
-    
-    // emitter.emit('render') // tot nu toe onbekende tender functie. uitzetten verhelpt niet onthouden van value
-
-  })
-})
-
-app.use(require('./stores/clicks'))
 app.use(require('./stores/answers'))
+app.use(require('./stores/clicks'))
+
 
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))

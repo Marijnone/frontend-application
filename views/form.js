@@ -9,13 +9,13 @@ module.exports = function (state, emit) {
    <li><a href="./">main</a></li>
 
     <label for="geslacht">geslacht</label>
-    <select class="form" onchange=${addAnswer} id="geslacht" name="geslacht">
+    <select class="form"  id="geslacht" name="geslacht">
     <option value="man">man</option>
     <option value="vrouw">vrouw</option>
    </select>
 
     <label for="leeftijdKind">Leeftijd van het kind</label>
-      <select class="form" onchange=${addAnswer} id="leeftijdKind" name="leeftijdKind">
+      <select class="form" id="leeftijdKind" name="leeftijdKind">
   
        <option value="0 tot 4 jaar">0 tot 4 jaar</option>
        <option value="4 tot 8 jaar">4 tot 8 jaar</option>
@@ -25,17 +25,22 @@ module.exports = function (state, emit) {
    
          </select>
          <button class="dim ph3 ba bw1 pv2 b--black pointer bg-white"
-            onclick=${handleClick}>
+            onclick=${addAnswer}>
             Emit a click event
           </button>
     </form>
-    <p> Antwoorden: ${state.answers}</p>    
+    <p class="test"> Antwoorden: ${state.answers.forEach(answer => {
+      console.log(state.answers[0])
+      
+      return state.answers[0].type
+      
+    })}</p>    
 
  
   </body>`
  //function to select value
- function addAnswer(){
-
+ function addAnswer(e){
+  e.preventDefault();
   var selectedOption = document.querySelectorAll('.form')
   var selectedValues = []
   selectedOption.forEach(function(select){
@@ -43,12 +48,6 @@ module.exports = function (state, emit) {
     var question = select.name
     selectedValues.push({type: question, value: selectedValue})
     })
-  console.log(selectedValues);
-  return selectedValues
+  emit('answers:add', selectedValues)
   }
-}
-
-function handleClick () {
-  addAnswer();
-  emit('answers:add', addAnswer())
 }
