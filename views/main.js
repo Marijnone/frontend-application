@@ -1,12 +1,14 @@
 var html = require('choo/html')
-
+var Form1 = require('../components/Form1')
 var TITLE = 'test-choo - main'
 
 module.exports = view
 
+var form1 = new Form1 ()
+
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
-  console.log(state); 
+  // console.log(state); 
 
   
   return html`
@@ -30,11 +32,12 @@ function view (state, emit) {
             Emit a click event
           </button>
 
-      <p> Antwoorden: ${state.answers.map(function(answer){
-        return answer.type + ' ' + ' ' + answer.value
+      <p> Ingevulde Data: ${state.answers.map(function(answer){
+        return answer.type + " " + answer.value
       })}</p>    
       
 
+      ${form1.render(state, emit)}
       </main>
       
 

@@ -1,6 +1,6 @@
 var css = require('sheetify')
 var choo = require('choo')
-
+var data = require('./assets/data')
 css('tachyons')
 
 var app = choo()
@@ -18,7 +18,12 @@ app.use((state,emitter) => {
 
 app.use(require('./stores/answers'))
 app.use(require('./stores/clicks'))
-
+//add data to the app
+app.use((state, emitter) => {
+  state.data = data
+  console.log(state.data);
+  
+})
 
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))
