@@ -18,7 +18,7 @@ app.use((state,emitter) => {
 
 app.use(require('./stores/answers'))
 app.use(require('./stores/clicks'))
-//add data to the app
+//add data to the app, and create an empty state
 app.use((state, emitter) => {
   state.data = data
   console.log(state.data);
