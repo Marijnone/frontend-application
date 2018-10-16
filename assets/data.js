@@ -1,6 +1,6 @@
 module.exports = {
     type: [{
-        name: "algemeen",
+        name: "Algemeen",
         selects: [{
                 name: "Geslacht",
                 options: [{

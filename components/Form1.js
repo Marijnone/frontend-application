@@ -22,7 +22,7 @@ module.exports = class Select extends ChooComponent {
                     return html `
                     <div>
                         <label for=${select.name}>${select.name}</label>
-                        <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit)}> //give parameters to addAnwsers :)
+                        <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit)}> 
                             ${select.options.map(option =>{
                                 return html `
                                     <option> ${option.name}</option>

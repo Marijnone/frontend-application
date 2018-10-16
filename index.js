@@ -18,15 +18,18 @@ app.use((state,emitter) => {
 
 app.use(require('./stores/answers'))
 app.use(require('./stores/clicks'))
+
 //add data to the app, and create an empty state
 app.use((state, emitter) => {
   state.data = data
-  console.log(state.data); //logs the object with all the data  
+  console.log(state.data); //logs the (empty) object with all the data  
   
 })
 
+//Routes
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))
 app.route('/form',require('./views/form'))
+app.route('/begin', require('./views/begin'))
 
 module.exports = app.mount('body') //load the content on the DOM
