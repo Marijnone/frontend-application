@@ -32,9 +32,7 @@ function view (state, emit) {
             Emit a click event
           </button>
 
-      <p> Ingevulde Data: ${state.answers.map(function(answer){
-        return answer.type + " " + answer.value
-      })}</p>    
+     
       
 
       ${form1.render(state, emit)}
