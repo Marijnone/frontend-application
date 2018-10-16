@@ -10,14 +10,14 @@ module.exports = class Select extends ChooComponent {
   createElement(state, emit) {
     return html `
     
-        <form>
+        <form class="risico">
              ${state.data.type.map(type =>{
 
                 return html `
                 <div>
                   <div>${type.name}</div>
                   ${type.selects.map(select =>{
-                    console.log(select)
+                    // console.log(select) 
 
                     return html `
                     <div>
