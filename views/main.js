@@ -8,9 +8,10 @@ var form1 = new Form1 ()
 
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
-  // console.log(state); 
 
-  
+
+  console.log(state.answers);
+
   return html`
 
     <body>
@@ -36,6 +37,8 @@ function view (state, emit) {
       
 
       ${form1.render(state, emit)}
+
+      
       </main>
       
 
@@ -46,6 +49,7 @@ function view (state, emit) {
   function handleClick () {
     emit('clicks:add', 1)
   }
+  
   
   
 }

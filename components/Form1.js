@@ -8,8 +8,8 @@ module.exports = class Select extends ChooComponent {
 
   }
   createElement(state, emit) {
-    // console.log(state)
     return html `
+    
         <form>
              ${state.data.type.map(type =>{
 
@@ -17,10 +17,12 @@ module.exports = class Select extends ChooComponent {
                 <div>
                   <div>${type.name}</div>
                   ${type.selects.map(select =>{
+                    console.log(select)
+
                     return html `
                     <div>
                         <label for=${select.name}>${select.name}</label>
-                        <select class="answers" id=${select.name} onchange=${(e)=>addAnswer(e,emit)}>
+                        <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit)}> //give parameters to addAnwsers :)
                             ${select.options.map(option =>{
                                 return html `
                                     <option> ${option.name}</option>
@@ -32,7 +34,6 @@ module.exports = class Select extends ChooComponent {
                   })}
                 </div>
                 `
-
                })}
         </form>
         `
@@ -41,18 +42,19 @@ module.exports = class Select extends ChooComponent {
     return false //depends the update function
   }
 }
-function addAnswer(e, emit) {
-      e.preventDefault();
-      var selectedOption = document.querySelectorAll('.answers')
-      var selectedValues = []
-      selectedOption.forEach(function(select) {
-        var selectedValue = select.value
-        var question = select.name
-        selectedValues.push({
-          type: question,
-          value: selectedValue
-        })
-      })
-      emit('answers:add', selectedValues)
 
-    }
+function addAnswer(e, emit) {
+  e.preventDefault();
+  var selectedOption = document.querySelectorAll('.answers')
+  var selectedValues = []
+  selectedOption.forEach(function (select) {
+    var selectedValue = select.value
+    var question =  select.dataset.cat //
+    selectedValues.push({
+      type: question,
+      value: selectedValue
+    })
+  })
+  emit('answers:add', selectedValues)
+
+}

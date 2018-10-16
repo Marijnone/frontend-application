@@ -38,18 +38,21 @@ module.exports = function (state, emit) {
 
  
   </body>`
- //function to select value
- function addAnswer(e){
-  e.preventDefault();
-  var selectedOption = document.querySelectorAll('.form')
-  var selectedValues = []
-  selectedOption.forEach(function(select){
-    var selectedValue = select.value
-    var question = select.name
-    selectedValues.push({type: question, value: selectedValue})
+  //function to select value
+  function addAnswer(e) {
+    e.preventDefault();
+    var selectedOption = document.querySelectorAll('.form')
+    var selectedValues = []
+    selectedOption.forEach(function (select) {
+      var selectedValue = select.value
+      var question = select.name
+      selectedValues.push({
+        type: question,
+        value: selectedValue
+      })
     })
-  emit('answers:add', selectedValues)
-  console.log(state.answers);
-  
+    emit('answers:add', selectedValues)
+    console.log(state.answers);
+
   }
 }

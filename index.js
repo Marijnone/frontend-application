@@ -21,7 +21,7 @@ app.use(require('./stores/clicks'))
 //add data to the app, and create an empty state
 app.use((state, emitter) => {
   state.data = data
-  console.log(state.data); //logs the object with all the data
+  console.log(state.data); //logs the object with all the data  
   
 })
 
