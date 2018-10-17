@@ -8,10 +8,19 @@ var button = new Button ()
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
   return html`
-  <body class="sans-serif pa3">
+  <body>
     <h1>Begin met een risico analyse </h1>
-    ${button.render(state, emit)}
+    <section class="case1">
 
+    </section>
+    <section class="case2">
+
+
+    </section>
+
+    <section class="begin_button">
+       ${button.render(state, emit, "Begin nieuwe risico analyse","form")}
+    </section>
   </body>
     
   `

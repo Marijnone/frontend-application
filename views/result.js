@@ -16,6 +16,7 @@ function view (state, emit) {
         <h2>${answer.type}</h2>
         <p class="${answer.value === "Niet bekend" ? "answerRed" : null}">${answer.value}</p>
       </div>
+      
       `
     })}
     </body>

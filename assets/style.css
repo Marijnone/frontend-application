@@ -72,5 +72,11 @@ button {
     border-radius: 3px;
     text-align: center;
   }
+
+.start_button{
+    display: flex;
+    justify-items: center;
+    width: 5em;
+}
 /*  font-family: 'Montserrat', sans-serif;
     font-family: 'Raleway', sans-serif; */

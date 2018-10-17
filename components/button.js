@@ -5,13 +5,13 @@ module.exports = class Button extends ChooComponent {
     constructor() {
         super()
     }
-    createElement(state, emit, label) {
+    createElement(state, emit, label, route) {
         return html `
         <body>
         
       <div>
              <button>
-                 <a href="/result">${label}</a>
+                 <a href="/${route}">${label}</a>
             </button>
       </div>
     
