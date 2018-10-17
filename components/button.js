@@ -9,11 +9,10 @@ module.exports = class Button extends ChooComponent {
         return html `
         <body>
         
-    <div class="flex justify-start">
       <div>
-      <button>
-            <a href="/result">${label}</a>
-          </button>
+             <button>
+                 <a href="/result">${label}</a>
+            </button>
       </div>
     
        </body> `

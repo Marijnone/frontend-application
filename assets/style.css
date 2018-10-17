@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:extra-bold');
+/* Some of the css came from an earlier assingment which can be found at https://github.com/Marijnone/shelter */
+
 
 body{
     background-color:#f5f6fa;
+    max-width: calc(24 * (1em + 1ex)); 
+    margin: auto;
+    padding: calc(2 * (1em + 1ex));
+  
 }
 
 h1{
@@ -10,14 +16,19 @@ h1{
     font-weight:extra-bold;
 }
 
-p,form{
+p,form,h2{
     font-family: 'Montserrat', sans-serif  
 }
 
+.answerRed {
+    color:red;
+}
+
 a {
-    color: black;
+    color: white;
     transition: 300ms color;
-    font:inherit;
+    font-family:'Montserrat';
+    text-decoration: none;
   }
 
 form {
@@ -46,25 +57,20 @@ select {
   border-radius: 3px;
   appearance: none;
   -webkit-appearance: none;
-  transition-property: transform, border-color;
-  transition-duration: 300ms;
 }
 label {
   margin: calc(1em + 1ex) 0;
 }
 button {
     display:flex;
-    align-items: center;
+    justify-items: center;
     font: inherit;
     background-color:#0097e6;
-    color: whitesmoke;
-    width: 4em;
-    padding: 1ch;
+    width: 100%;
+    padding:2em;
     border: 1px solid transparent;
     border-radius: 3px;
     text-align: center;
-    transition-property: transform, color, border-color, background-color;
-    transition-duration: 300ms;
   }
 /*  font-family: 'Montserrat', sans-serif;
     font-family: 'Raleway', sans-serif; */
