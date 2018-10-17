@@ -1,7 +1,7 @@
 var css = require('sheetify')
 var choo = require('choo')
 var data = require('./assets/data')
-css('tachyons')
+// css('tachyons')
 
 var app = choo()
 if (process.env.NODE_ENV !== 'production') {
@@ -29,7 +29,7 @@ app.use((state, emitter) => {
 //Routes
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))
-app.route('/form',require('./views/form'))
+app.route('/form',require('./views/risico_analyse'))
 app.route('/begin', require('./views/begin'))
 
 module.exports = app.mount('body') //load the content on the DOM

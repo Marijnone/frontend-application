@@ -1,4 +1,22 @@
-.risico{
-    font-family: system-ui;
-    font-size: 3em;
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:extra-bold');
+
+body{
+    background-color:#f5f6fa;
 }
+
+h1{
+    font-size:4em;
+    font-family: 'Raleway', sans-serif;
+    font-weight:extra-bold;
+}
+
+p,form{
+    font-family: 'Montserrat', sans-serif  
+}
+
+form{
+
+}
+
+/*  font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif; */

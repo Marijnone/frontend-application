@@ -1,7 +1,7 @@
 var ChooComponent = require('choo/component')
 var html = require('choo/html')
 
-module.exports = class Select extends ChooComponent {
+module.exports = class Form1 extends ChooComponent {
   constructor() {
 
     super()

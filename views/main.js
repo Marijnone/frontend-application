@@ -1,11 +1,12 @@
 var html = require('choo/html')
 var Form1 = require('../components/Form1')
+var Button = require('../components/button')
 var TITLE = 'test-choo - main'
 
 module.exports = view
 
 var form1 = new Form1 ()
-
+var button = new Button ()
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
 
@@ -14,33 +15,22 @@ function view (state, emit) {
 
   return html`
 
-  <body class="sans-serif pa3">
-    <li><a href="./form">form</a></li>
+  <body class="welkom">
+    <li><a href="./risico_analyse">form</a></li>
       <section class="fl mw6 w-50-m w-third-l pa3">
-          <h1>Welkom</h1>
+          <h1>Risico analyse</h1>
 
           <p>
-            
+            Vul hier de vragen lijst in
           </p>
       </section>
-      <section class="fl mw6 w-50-m w-third-l pa3">
-          <p>Number of clicks stored: ${state.totalClicks}</p>
-
-          <button class="dim ph3 ba bw1 pv2 b--black pointer bg-white"
-            onclick=${handleClick}>
-            Emit a click event
-          </button>
+          <section class="form">
+            ${form1.render(state, emit)}
           </section>
-
-     
-      
-
-      ${form1.render(state, emit)}
-
-      
+      <section>
+        ${button.render(state, emit,"Toon risico")}
+      </section>
       </main>
-      
-
     </body>`
 
 
