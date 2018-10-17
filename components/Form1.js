@@ -15,14 +15,16 @@ module.exports = class Form1 extends ChooComponent {
 
                 return html `
                 <div>
-                  <div>${type.name}</div>
-                  ${type.selects.map(select =>{
+                  <div> <h2>${type.name} </h2></div>
+                     ${type.selects.map(select =>{
                     // console.log(select) 
 
                     return html `
                     <div>
                         <label for=${select.name}>${select.name}</label>
-                        <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit)}> 
+                            <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit,state)}> 
+                        <option> Niet bekend</option>
+
                             ${select.options.map(option =>{
                                 return html `
                                     <option> ${option.name}</option>
@@ -43,16 +45,22 @@ module.exports = class Form1 extends ChooComponent {
   }
 }
 
-function addAnswer(e, emit) {
+function addAnswer(e, emit,state) {
   e.preventDefault();
   var selectedOption = document.querySelectorAll('.answers')
   var selectedValues = []
   selectedOption.forEach(function (select) {
     var selectedValue = select.value
     var question =  select.dataset.cat //
+    var gewicht =   
+    // console.log(gewicht);
+    // console.log(state.data);
+    
+    
     selectedValues.push({
       type: question,
-      value: selectedValue
+      value: selectedValue,
+      gewicht: gewicht
     })
   })
   emit('answers:add', selectedValues)

@@ -11,7 +11,7 @@ function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
 
 
-  console.log(state.answers);
+  // console.log(state.answers);  
 
   return html`
 
@@ -28,7 +28,7 @@ function view (state, emit) {
             ${form1.render(state, emit)}
           </section>
       <section>
-        ${button.render(state, emit,"Toon risico")}
+           ${button.render(state, emit,"Toon risico")}
       </section>
       </main>
     </body>`
