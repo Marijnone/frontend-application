@@ -28,7 +28,7 @@ function view (state, emit) {
             ${form1.render(state, emit)}
           </section>
       <section>
-           ${button.render(state, emit,"Toon risico",)}
+           ${button.render(state, emit,"Toon risico","result")}
       </section>
       </main>
     </body>`

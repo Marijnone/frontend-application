@@ -32,7 +32,7 @@ app.use((state, emitter) => {
 })
 
 //Routes
-app.route('/', require('./views/main'))
+app.route('/', require('./views/begin'))
 app.route('/*', require('./views/404'))
 app.route('/form',require('./views/risico_analyse'))
 app.route('/begin', require('./views/begin'))

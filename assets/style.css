@@ -4,20 +4,35 @@
 
 body{
     background-color:#f5f6fa;
-    max-width: calc(24 * (1em + 1ex)); 
+    /* max-width: calc(24 * (1em + 1ex)); 
     margin: auto;
-    padding: calc(2 * (1em + 1ex));
+    padding: calc(2 * (1em + 1ex)); */
   
 }
 
 h1{
-    font-size:4em;
+    font-size:3em;
     font-family: 'Raleway', sans-serif;
     font-weight:extra-bold;
 }
 
 p,form,h2{
     font-family: 'Montserrat', sans-serif  
+}
+
+section.risico-analyse{
+    display: flex;
+    box-shadow: grey;
+}
+
+.result{
+    display: flex;
+    background-color: #0097e6;
+    height: 9em;
+    width: 14em;
+    position: fixed;
+    top: 8em;
+
 }
 
 .answerRed {
@@ -32,9 +47,9 @@ a {
   }
 
 form {
-    margin: 0 calc(-2 * (1em + 1ex));
+    /* margin: 0 calc(-2 * (1em + 1ex));
     padding: calc(1em + 1ex) calc(2 * (1em + 1ex));
-    border-radius: 3px;
+    border-radius: 3px; */
   }
 
 label,

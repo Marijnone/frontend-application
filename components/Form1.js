@@ -15,23 +15,26 @@ module.exports = class Form1 extends ChooComponent {
 
                 return html `
                 <div>
-                  <div> <h2>${type.name} </h2></div>
+                  <div> <h2>${type.name} </h2> </div>
                      ${type.selects.map(select =>{
                     // console.log(select) 
 
                     return html `
-                    <div>
-                        <label for=${select.name}>${select.name}</label>
-                            <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit,state)}> 
-                        <option> Niet bekend</option>
+                      <div class="hidden">
+                          <label for=${select.name}>${select.name}</label>
+                              <select class="answers" data-cat=${select.name} id=${select.name} onchange=${(e)=>addAnswer(e,emit,state)}> 
+                                <option> Niet bekend</option>
 
-                            ${select.options.map(option =>{
-                                return html `
-                                    <option> ${option.name}</option>
-                                `
-                            })}
-                        </select>
-                    </div>
+                                ${select.options.map(option =>{
+                                  return html `
+                                    <option data-gewicht=${option.gewicht}>${option.name}</option>
+                                  `
+                              })}
+                          </select>
+                        </div>
+                        
+                    
+                    
                     `
                   })}
                 </div>
@@ -47,13 +50,18 @@ module.exports = class Form1 extends ChooComponent {
 
 function addAnswer(e, emit,state) {
   e.preventDefault();
-  var selectedOption = document.querySelectorAll('.answers')
+  var selectedOption = Array.from(document.querySelectorAll('.answers')).filter(function(answer){
+    return answer.selectedIndex != 0
+  })
+  // console.log(selectedOption);
+  
   var selectedValues = []
   selectedOption.forEach(function (select) {
     var selectedValue = select.value
     var question =  select.dataset.cat //
-    var gewicht =   
-    // console.log(gewicht);
+    var selectedIndex = select.selectedIndex
+    var gewicht =   select[selectedIndex].dataset.gewicht
+    console.log(gewicht);
     // console.log(state.data);
     
     
@@ -63,6 +71,8 @@ function addAnswer(e, emit,state) {
       gewicht: gewicht
     })
   })
+  console.log(selectedValues);
+  
   emit('answers:add', selectedValues)
 
 }

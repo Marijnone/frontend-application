@@ -17,11 +17,16 @@ module.exports = function (state, emit) {
           Vul hier de formulier in
         </p>
     </section>
-        <section class="form">
+        <section class="risico-analyse">
           ${form1.render(state, emit)}
         </section>
     <section>
-         ${button.render(state, emit,"Toon risico")}
+         ${button.render(state, emit,"Toon risico","result")}
+    </section>
+    <section class="result">
+      <h2>Risico Percentage</h2>
+      <p> ${state.answers} <p>
+
     </section>
     </main>
   </body>`
