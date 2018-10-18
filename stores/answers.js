@@ -20,11 +20,9 @@ function answers(state, emitter) {
     state.answers.push(obj)
 
     state.percentage = formula(answers, emitter)
-
-
     emitter.emit('render')
 
-    function formula(answers, emitter) {
+    function formula(answers, emitter) { //thanks to Jim for helping me out with the formula
       var gewichten = []
       answers.forEach(function (answer) {
         var gewicht = answer.gewicht
@@ -41,7 +39,4 @@ function answers(state, emitter) {
 
     emitter.emit(state.events.RENDER)
   })
-
-
-
 }

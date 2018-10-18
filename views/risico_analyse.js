@@ -10,19 +10,18 @@ module.exports = function (state, emit) {
   return html `
 
   <body class="welkom">
-  <li><a href="./risico_analyse">form</a></li> 
   <section>
  
-    <h1>Risico analyse</h1>
+    <h1>Risico analyse app</h1>
         <p>
-          Vul hier de formulier in
+          Vul hier het formulier in
         </p>
     </section>
         <section class="risico-analyse">
           ${form1.render(state, emit)}
         </section>
     <section>
-         ${button.render(state, emit,"Toon rapport")}
+         ${button.render(state, emit,"Toon rapport","result")}
     </section>
     <section class="result">
        <h2>Risico Percentage: ${state.percentage} % </h2>

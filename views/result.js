@@ -3,14 +3,12 @@ var html = require('choo/html')
 module.exports = view
 
 function view (state, emit) {
-  console.log(state.answers);
-  console.log(Object.values(state.answers))
-  var risico_percentage = 23
+console.log(state.answers);
 
   return html`
     <body>
     <section>
-    <h2>Risico percentage: ${risico_percentage} %</h2>
+    <h2>Risico percentage: ${state.percentage} %</h2>
 
     </section>
     ${state.answers.map(answer=>{

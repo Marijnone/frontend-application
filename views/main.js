@@ -18,7 +18,7 @@ function view (state, emit) {
   <body class="welkom">
     <li><a href="./form">form</a></li>
       <section class="fl mw6 w-50-m w-third-l pa3">
-          <h1>Risico analyse</h1>
+          <h1>Risico analyse app</h1>
 
           <p>
             Vul hier de vragen lijst in

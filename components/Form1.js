@@ -58,8 +58,6 @@ function addAnswer(e, emit,state) {
     var gewicht = select[selectedIndex].dataset.gewicht
     console.log(selectedIndex);
     
-    
-    
     selectedValues.push({
       type: question,
       value: selectedValue,
