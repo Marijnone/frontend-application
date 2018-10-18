@@ -61,7 +61,7 @@ function addAnswer(e, emit,state) {
     var question =  select.dataset.cat //
     var selectedIndex = select.selectedIndex
     var gewicht =   select[selectedIndex].dataset.gewicht
-    console.log(gewicht);
+    // console.log(gewicht);
     // console.log(state.data);
     
     
@@ -70,8 +70,9 @@ function addAnswer(e, emit,state) {
       value: selectedValue,
       gewicht: gewicht
     })
+    
   })
-  console.log(selectedValues);
+  // console.log(selectedValues);
   
   emit('answers:add', selectedValues)
 
