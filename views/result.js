@@ -5,8 +5,7 @@ module.exports = view
 function view (state, emit) {
   console.log(state.answers);
   console.log(Object.values(state.answers))
-  var risico_percentage = 23
-
+  state.percentage
   return html`
     <body>
     <section>

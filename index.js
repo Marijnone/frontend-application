@@ -22,14 +22,7 @@ app.use(require('./stores/clicks'))
 app.use((state, emitter) => {
   state.data = data
   // console.log(state.data); //logs the (empty) object with all the data  
-  //Function to display all the weight off the data to testout
-  state.data.type.forEach(type=>{
-    type.selects.forEach(select =>{
-      select.options.forEach(option=>{
-      //  console.log(option.name,option.gewicht)
-      })
-    })
-  })  
+
 })
 
 //Routes

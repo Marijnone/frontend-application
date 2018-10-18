@@ -17,7 +17,6 @@ module.exports = class Form1 extends ChooComponent {
                 <div>
                   <div> <h2>${type.name} </h2> </div>
                      ${type.selects.map(select =>{
-                    // console.log(select) 
 
                     return html `
                       <div class="hidden">
@@ -32,9 +31,6 @@ module.exports = class Form1 extends ChooComponent {
                               })}
                           </select>
                         </div>
-                        
-                    
-                    
                     `
                   })}
                 </div>
@@ -53,16 +49,15 @@ function addAnswer(e, emit,state) {
   var selectedOption = Array.from(document.querySelectorAll('.answers')).filter(function(answer){
     return answer.selectedIndex != 0
   })
-  // console.log(selectedOption);
-  
+  //create an empty array and select the questions and selected value's after that it makes an var gewicht where it stores the gewicht of the question
   var selectedValues = []
   selectedOption.forEach(function (select) {
     var selectedValue = select.value
     var question =  select.dataset.cat //
     var selectedIndex = select.selectedIndex
-    var gewicht =   select[selectedIndex].dataset.gewicht
-    // console.log(gewicht);
-    // console.log(state.data);
+    var gewicht = select[selectedIndex].dataset.gewicht
+    console.log(selectedIndex);
+    
     
     
     selectedValues.push({

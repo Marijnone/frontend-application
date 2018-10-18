@@ -8,6 +8,7 @@ var button = new Button ()
 var form1 = new Form1 ()
 module.exports = function (state, emit) {
   return html `
+
   <body class="welkom">
   <li><a href="./risico_analyse">form</a></li> 
   <section>
@@ -21,11 +22,11 @@ module.exports = function (state, emit) {
           ${form1.render(state, emit)}
         </section>
     <section>
-         ${button.render(state, emit,"Toon risico","result")}
+         ${button.render(state, emit,"Toon rapport","result")}
     </section>
     <section class="result">
-      <h2>Risico Percentage</h2>
-      <p> ${state.answers} <p>
+      <h2>Risico Percentage: ${state.percentage} % </h2>
+      <p> <p>
 
     </section>
     </main>
