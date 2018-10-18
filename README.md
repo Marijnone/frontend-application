@@ -1,7 +1,5 @@
 # Risico taxatie app
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 Risico taxatie app is a tool developed voor [Garage2020](http://www.garage2020.nl/). It makes it possible for youth workers to fill in a form and quickly get back risk result.
 
   - Powered by Choo.io 
@@ -34,22 +32,6 @@ Command                | Description                                      |
 ### Tech
 
 Dillinger uses a number of open source projects to work properly:
-
-* [Choo.io] - minimal webapp frame!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](http://breakdance.io) - HTML to Markdown converter
-* [jQuery] - duh
-
-
-
-
-
-
 
 ### Todos
 -
