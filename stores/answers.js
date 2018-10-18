@@ -30,7 +30,7 @@ function answers(state, emitter) {
         var gewicht = answer.gewicht
         gewichten.push(gewicht)
       })
-      var sum = gewichten.reduce(function (accumulator, currentValue) {
+       var sum = gewichten.reduce(function (accumulator, currentValue) {
         return Number(accumulator) + Number(currentValue)
       }, 0)
       var percentage = Number((1 / (1 + Math.exp(-1 * (-8.57219 + sum))) * 100).toFixed(2))

@@ -22,13 +22,11 @@ module.exports = function (state, emit) {
           ${form1.render(state, emit)}
         </section>
     <section>
-         ${button.render(state, emit,"Toon rapport","result")}
+         ${button.render(state, emit,"Toon rapport")}
     </section>
     <section class="result">
-      <h2>Risico Percentage: ${state.percentage} % </h2>
-      <p> <p>
-
-    </section>
+       <h2>Risico Percentage: ${state.percentage} % </h2>
+      </section>
     </main>
   </body>`
   //function to select value
