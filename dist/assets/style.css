@@ -143,3 +143,26 @@ button {
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .result{
+    display: flex;
+    text-size-adjust: inherit;
+    font-size: x-small;
+    position: fixed;
+    height: 8em;
+    width: 9em;
+    top: 53em;
+    border-radius: 50%;
+    left: 23em;
+    padding: 1em;
+    color: white;
+    text-align: center;
+    background-color: #0097e6;
+    box-shadow: 0px 3px 13px 0px rgba(187, 187, 187, 1);
+    /* hover styles */
+    -webkit-animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    }
+}
+     
