@@ -11,18 +11,19 @@ function answers(state, emitter) {
       type,
       value,
       gewicht
-    } = answers; //to define the type and value Object.assign(waar het in moet, waar je het uithaalt)
+    } = answers; //to define the type and value
     var obj = {
       type: type,
       value: value
     }
 
     state.answers.push(obj)
+    
 
     state.percentage = formula(answers, emitter)
     emitter.emit('render')
 
-    function formula(answers, emitter) { //thanks to Jim for helping me out with the formula
+    function formula(answers, emitter) { //thanks to Jim van de Ven for helping me out with the formula
       var gewichten = []
       answers.forEach(function (answer) {
         var gewicht = answer.gewicht
@@ -33,7 +34,7 @@ function answers(state, emitter) {
       }, 0)
       var percentage = Number((1 / (1 + Math.exp(-1 * (-8.57219 + sum))) * 100).toFixed(2))
 
-      console.log(percentage);
+      // console.log(percentage);      
       return percentage
     };
 

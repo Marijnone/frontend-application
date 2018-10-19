@@ -7,6 +7,8 @@ module.exports = class Form1 extends ChooComponent {
     super()
 
   }
+  //create element is a function that takes the questions and the type first it mapes over the state.data and gives back a type
+  //ive got the idea from Jim as we both wanted a way to get the questions from the data
   createElement(state, emit) {
     return html `
     
@@ -40,7 +42,7 @@ module.exports = class Form1 extends ChooComponent {
         `
   }
   update(state, emit) {
-    return false //depends the update function
+    return false //depends on the update function
   }
 }
 
@@ -56,7 +58,6 @@ function addAnswer(e, emit,state) {
     var question =  select.dataset.cat //
     var selectedIndex = select.selectedIndex
     var gewicht = select[selectedIndex].dataset.gewicht
-    console.log(selectedIndex);
     
     selectedValues.push({
       type: question,
