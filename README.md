@@ -2,8 +2,11 @@
 
 Risico taxatie app is a tool developed voor [Garage2020](http://www.garage2020.nl/). It makes it possible for youth workers to fill in a form and quickly get back risk result.
 
+[demo](https://risico-taxatie.netlify.com/)
+
   - Powered by Choo.io 
   - Vanilla javascript
+  
 ### Installation
 
   navigate to your terminal and run 
